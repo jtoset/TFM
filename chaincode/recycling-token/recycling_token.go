@@ -32,17 +32,6 @@ type event struct {
 	Value int    `json:"value"`
 }
 
-func main() {
-	tokenChaincode, err := contractapi.NewChaincode(&chaincode.SmartContract{})
-	if err != nil {
-		log.Panicf("Error creating recycling-token chaincode: %v", err)
-	}
-
-	if err := tokenChaincode.Start(); err != nil {
-		log.Panicf("Error starting recycling-token chaincode: %v", err)
-	}
-}
-
 // Mint creates new tokens and adds them to minter's account balance
 // This function triggers a Transfer event
 func (s *SmartContract) Mint(ctx contractapi.TransactionContextInterface, amount int) error {

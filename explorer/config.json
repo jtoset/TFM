@@ -1,0 +1,9 @@
+{
+	"network-configs": {
+		"recyclingchain_network": {
+			"name": "Recyclingchain Network",
+			"profile": "./connection-profile/recyclingchain_network.json"
+		}
+	},
+	"license": "Apache-2.0"
+}

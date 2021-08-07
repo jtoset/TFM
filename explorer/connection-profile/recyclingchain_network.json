@@ -1,0 +1,48 @@
+{
+	"name": "recyclingchain_network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"marketplace": {
+			"peers": {
+				"peer0.org1.recyclingchain.com": {}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org1.recyclingchain.com/users/User1@org1.recyclingchain.com/msp/keystore/f521171e1d50843d419fe79940d6c54f85e43afcaf4cec34aa6384706f8e9b5c_sk"
+			},
+			"peers": ["peer0.org1.recyclingchain.com"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org1.recyclingchain.com/users/User1@org1.recyclingchain.com/msp/signcerts/cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org1.recyclingchain.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org1.recyclingchain.com/peers/peer0.org1.recyclingchain.com/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org1.recyclingchain.com:7051"
+		}
+	}
+}
